@@ -34,3 +34,16 @@ def calcular_estadisticas(saldos):
   print("Saldo más bajo:", saldo_mas_bajo)
   print("Saldo promedio:", saldo_promedio)
   print("Media geométrica:", media_geometrica)
+
+# Función para generar reporte de saldos
+def generar_reporte(saldos):
+  with open("reporte_saldos.csv", "w", newline="") as archivo_csv:
+    escritor = csv.writer(archivo_csv)
+    escritor.writerow(["Cliente", "Saldo Inicial", "Deduccion Prestamo", "Deduccion Impuestos", "Saldo Neto"])
+
+    for i, saldo in enumerate(saldos):
+      deduccion_prestamo = random.randint(1000, saldo // 2)  # Deduccion entre 1000 y la mitad del saldo
+      deduccion_impuestos = random.randint(100, 500)  # Deduccion entre 100 y 500
+      saldo_neto = saldo - deduccion_prestamo - deduccion_impuestos
+
+      escritor.writerow([i + 1, saldo, deduccion_prestamo, deduccion_impuestos, saldo_neto])
