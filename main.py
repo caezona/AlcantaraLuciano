@@ -29,3 +29,8 @@ def calcular_estadisticas(saldos):
   for saldo in saldos:
     media_geometrica *= saldo
   media_geometrica = pow(media_geometrica, 1/len(saldos))
+
+  print("Saldo más alto:", saldo_mas_alto)
+  print("Saldo más bajo:", saldo_mas_bajo)
+  print("Saldo promedio:", saldo_promedio)
+  print("Media geométrica:", media_geometrica)
