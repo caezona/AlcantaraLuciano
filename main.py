@@ -17,3 +17,9 @@ def clasificar_saldos(saldos):
   print("Saldos bajos:", saldos_bajos)
   print("Saldos medios:", saldos_medios)
   print("Saldos altos:", saldos_altos)
+
+# Función para calcular y mostrar estadísticas
+def calcular_estadisticas(saldos):
+  saldo_mas_alto = max(saldos)
+  saldo_mas_bajo = min(saldos)
+  saldo_promedio = sum(saldos) / len(saldos)
