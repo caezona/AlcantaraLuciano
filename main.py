@@ -47,3 +47,32 @@ def generar_reporte(saldos):
       saldo_neto = saldo - deduccion_prestamo - deduccion_impuestos
 
       escritor.writerow([i + 1, saldo, deduccion_prestamo, deduccion_impuestos, saldo_neto])
+
+# Función principal
+def main():
+  saldos = generar_saldos()
+
+  while True:
+    print("\nMenú Principal:")
+    print("1. Clasificar saldos")
+    print("2. Ver estadísticas")
+    print("3. Generar reporte de saldos")
+    print("4. Salir del programa")
+
+    opcion = int(input("Ingrese una opción: "))
+
+    if opcion == 1:
+      clasificar_saldos(saldos)
+    elif opcion == 2:
+      calcular_estadisticas(saldos)
+    elif opcion == 3:
+      generar_reporte(saldos)
+      print("Reporte generado en el archivo reporte_saldos.csv")
+    elif opcion == 4:
+      print("¡Muchas gracias por ocupar nuestra aplicación, esperemos que le haya ayudado analizar y gestionar sus datos!")
+      break
+    else:
+      print("Opción no válida. Intente nuevamente.")
+
+if __name__ == "__main__":
+    main()
